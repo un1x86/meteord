@@ -1,5 +1,7 @@
 FROM debian:wheezy
-MAINTAINER MeteorHacks Pvt Ltd.
+MAINTAINER Christian Sandrini
+
+RUN apt-get update && apt-get install -y graphicsmagick graphicsmagick-imagemagick-compat && apt-get clean && rm -rf /var/lib/apt/lists/* 
 
 ENV METEORD_DIR /opt/meteord
 COPY scripts $METEORD_DIR

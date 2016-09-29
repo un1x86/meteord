@@ -37,6 +37,11 @@ if [[ $DELAY ]]; then
   sleep $DELAY
 fi
 
+# Use settings file if available
+if [ -e /opt/meteord/settings/settings.json ]; then
+    METEOR_SETTINGS=$(/opt/meteord/settings/settings.json | tr -ds '\n' ' ')
+fi
+
 # Honour already existing PORT setup
 export PORT=${PORT:-80}
 
