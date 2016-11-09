@@ -1,5 +1,8 @@
-FROM meteorhacks/meteord:base
-MAINTAINER MeteorHacks Pvt Ltd.
+FROM abernix/meteord:base
+MAINTAINER Jesse Rosenberger
+
+ARG NODE_VERSION
+ENV NODE_VERSION ${NODE_VERSION:-4.6.1}
 
 ONBUILD RUN bash $METEORD_DIR/lib/install_meteor.sh
 ONBUILD COPY ./ /app
