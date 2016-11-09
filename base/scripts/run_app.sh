@@ -39,7 +39,7 @@ fi
 
 # Use settings file if available
 if [ -e /opt/meteord/settings/settings.json ]; then
-    METEOR_SETTINGS=$(/opt/meteord/settings/settings.json | tr -ds '\n' ' ')
+  export METEOR_SETTINGS=$(cat /opt/meteord/settings/settings.json | tr -ds '\n' ' ')
 fi
 
 # Honour already existing PORT setup
